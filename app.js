@@ -6,6 +6,9 @@ const app = express();
 
 //IMPORTING ROUTES
 const styleRouter = require('./routes/styles')
+const globalSizeRouter = require('./routes/globalSizes')
+const sizeMasterRouter = require('./routes/sizeMasters')
+const skuMasterRouter = require('./routes/skuMasters')
 
 
 //MIDDLEWARES
@@ -14,21 +17,20 @@ app.use(express.json());
 
 //USING ROUTES AS A MIDDLEWARE
 app.use('/', styleRouter)
+app.use('/', skuMasterRouter)
+app.use('/', sizeMasterRouter)
+app.use('/', globalSizeRouter)
 
 
-app.get('/', (req, res)=>res.send("Aur bhai aa gyaa swaad"))
 
 //CONNECT TO DB
 mongoose.connect(process.env.DB_CONNECTION,
     {
         useNewUrlParser: true,
-        useCreateIndex: true,
         useUnifiedTopology: true,
-        useFindAndModify: false
-    },
-    () => console.log("Connected to DB!!")
-);
-
-
+    }
+)
+.then(() => console.log("Database connected!"))
+.catch(err => console.log(err));
 
 app.listen(3001)
