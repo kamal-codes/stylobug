@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const styleMasterSchema = mongoose.Schema({
+const stylePropMasterSchema = mongoose.Schema({
     clientID: {
         type: String
     },
@@ -26,4 +26,4 @@ const styleMasterSchema = mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model("sizeMaster", styleMasterSchema)
+module.exports = mongoose.model("stylePropMaster", stylePropMasterSchema)

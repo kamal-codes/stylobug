@@ -9,17 +9,20 @@ const styleRouter = require('./routes/styles')
 const globalSizeRouter = require('./routes/globalSizes')
 const sizeMasterRouter = require('./routes/sizeMasters')
 const skuMasterRouter = require('./routes/skuMasters')
+const stylePropMasterRouter = require('./routes/stylePropMasters')
 
 
 //MIDDLEWARES
 app.use(cors())
 app.use(express.json());
 
+
 //USING ROUTES AS A MIDDLEWARE
-app.use('/', styleRouter)
 app.use('/', skuMasterRouter)
 app.use('/', sizeMasterRouter)
 app.use('/', globalSizeRouter)
+app.use('/', styleRouter)
+app.use('/', stylePropMasterRouter)
 
 
 
