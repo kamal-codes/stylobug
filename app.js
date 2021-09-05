@@ -18,10 +18,10 @@ app.use(express.json());
 
 
 //USING ROUTES AS A MIDDLEWARE
+app.use('/addstyle', styleRouter)
 app.use('/', skuMasterRouter)
 app.use('/', sizeMasterRouter)
 app.use('/', globalSizeRouter)
-app.use('/', styleRouter)
 app.use('/', stylePropMasterRouter)
 
 
@@ -36,4 +36,4 @@ mongoose.connect(process.env.DB_CONNECTION,
 .then(() => console.log("Database connected!"))
 .catch(err => console.log(err));
 
-app.listen(3001)
+app.listen(3002)
