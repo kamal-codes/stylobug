@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-
+// Kamal ->The name should be sizeMaster
 const sizeMasterSchema = mongoose.Schema({
     clientID: {
         type: String
