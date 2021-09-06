@@ -1,5 +1,6 @@
 const mongoose = require("mongoose")
 
+// Kamal ->The name should be styleMaster
 const stylePropMasterSchema = mongoose.Schema({
     clientID: {
         type: String
@@ -7,12 +8,15 @@ const stylePropMasterSchema = mongoose.Schema({
     styleCode: {
         type: String
     },
+ // Kamal ->The name should be attributeCode
     AttributeCode: {
         type: String
     },
+ // Kamal ->The name should be in camel case
     AttributeGroupCode: {
         type: String
     },
+  // Kamal ->The name should be in camel case
     Status: {
         type: String
     },
