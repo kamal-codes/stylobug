@@ -11,6 +11,7 @@ const skuMasterSchema = mongoose.Schema({
     sizeCode: {
         type: String,
     },
+// Kamal ->Consistent naming. It should be barCode.
     BarCode: {
         type: String,
     },
